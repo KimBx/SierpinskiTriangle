@@ -1,5 +1,5 @@
-int len=500;
-int opacity=60;
+int len=250;
+int opacity=500;
 color epilepsy;
 public void setup()
 {
@@ -20,34 +20,46 @@ public void draw()
     len=len*3;
     opacity=60;
   }
+   sierCarpet(300,height-50,len);
+  if(len>1000)
+  {
+    len=len/3;
+    opacity=60;
+  }
+  if(len<250)
+  {
+    len=len*3;
+    opacity=60;
+  }
+  sierCarpet(300,height-300,len);
+  if(len>1000)
+  {
+    len=len/3;
+    opacity=60;
+  }
+  if(len<250)
+  {
+    len=len*3;
+    opacity=60;
+  }
+  sierCarpet(50,height-300,len);
+  if(len>1000)
+  {
+    len=len/3;
+    opacity=60;
+  }
+  if(len<250)
+  {
+    len=len*3;
+    opacity=60;
+  }
+
+
 }
 public void mouseDragged()//optional
 {
 
 }
-public void mouseWheel(MouseEvent event) {
-  len+=(10*event.getCount());
-  opacity+=3;
-}
-
-public void keyPressed()
-{
-  if(key == 's')
-  {
-    len=550;
-  }
-  if(key == 'a')
-  {
-    len-=10;
-    opacity-=1;
-  }
-  if(key == 'd')
-  {
-    len+=10;
-    
-  }
-}
-
 
 public void sierpinski(int x, int y, int len) 
 {
@@ -70,7 +82,6 @@ public void sierCarpet(int x, int y, int len)
     epilepsy = color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255),opacity);
     fill(epilepsy);
     noStroke();
-    //fill(255,255,255);
     rect(x,y,len,len);
   }
   else 
